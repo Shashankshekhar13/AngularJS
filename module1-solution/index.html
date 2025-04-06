@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="LunchCheck">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lunch Check</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2em;
+    }
+    input {
+      padding: 0.5em;
+      font-size: 1em;
+      width: 300px;
+      margin-right: 0.5em;
+    }
+    button {
+      padding: 0.5em 1em;
+      font-size: 1em;
+    }
+    .message {
+      margin-top: 1em;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    .success {
+      color: green;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body ng-controller="LunchCheckController as lc">
+  <h1>Lunch Check</h1>
+
+  <input
+    type="text"
+    ng-model="lc.lunchList"
+    placeholder="e.g. eggs, bacon, toast"
+  />
+  <button ng-click="lc.checkLunch()">Check If Too Much</button>
+
+  <div class="message" ng-class="lc.messageClass">
+    {{ lc.message }}
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
